@@ -3,7 +3,38 @@ export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
 
   // Configuration des modules
-  modules: ['@nuxt/ui', '@nuxt/icon'],
+  modules: ['@nuxt/ui', '@nuxt/icon', '@nuxt/fonts'],
+
+  // Configuration Nuxt UI
+  ui: {
+    // Configuration du thème et des couleurs
+    // primary: 'green', // Couleur principale (par défaut: green)
+    // gray: 'cool', // Nuance de gris (par défaut: cool)
+  },
+
+  // Configuration des polices
+  fonts: {
+    families: [
+      // DM Sans - police principale (sans-serif) avec polices variables
+      {
+        name: 'DM Sans',
+        provider: 'local',
+        weights: [300, 400, 500, 600, 700],
+        styles: ['normal', 'italic'],
+      },
+      // DM Serif Text - police secondaire (serif)
+      {
+        name: 'DM Serif Text',
+        provider: 'local',
+        weights: [400],
+        styles: ['normal', 'italic'],
+      },
+    ],
+    defaults: {
+      weights: [300, 400, 500, 600, 700],
+      styles: ['normal', 'italic'],
+    },
+  },
 
   // Import du CSS principal
   css: ['~/assets/css/main.css'],

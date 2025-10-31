@@ -28,8 +28,8 @@ onMounted(() => {
 
         <!-- Titre principal -->
         <div class="space-y-4">
-          <h1 class="text-6xl md:text-7xl lg:text-8xl font-bold text-gray-900 dark:text-white tracking-tight">
-            MédyVI
+          <h1 class="text-6xl md:text-7xl lg:text-8xl font-serif text-gray-900 dark:text-white tracking-tight">
+            
           </h1>
 
           <!-- Rôle avec transition -->
