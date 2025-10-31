@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   // Configuration des modules
   modules: ['@nuxt/ui', '@nuxt/icon'],
 
+  // Import du CSS principal
+  css: ['~/assets/css/main.css'],
+
   // Configuration SEO globale
   app: {
     head: {

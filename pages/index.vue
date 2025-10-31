@@ -1,18 +1,28 @@
-<template>
-  <UContainer>
-    <section class="flex flex-col items-center justify-center min-h-[70vh] space-y-6 py-12">
-      <div class="text-center space-y-4">
-        <h1 class="text-5xl font-bold text-gray-900 dark:text-white">MédyVI</h1>
-        <p class="text-xl text-gray-600 dark:text-gray-400">Développeur web passionné</p>
-        <p class="text-base text-gray-500 dark:text-gray-500">Portfolio Nuxt 3</p>
-      </div>
+<script setup lang="ts">
+// SEO pour la page d'accueil
+useHead({
+  title: 'Accueil',
+  meta: [
+    {
+      name: 'description',
+      content: 'Portfolio de MédyVI - Développeur Full Stack spécialisé en Vue.js, Nuxt et TypeScript',
+    },
+  ],
+})
+</script>
 
-      <div class="flex gap-4">
-        <UButton color="primary" size="lg" icon="i-heroicons-envelope"> Me contacter </UButton>
-        <UButton color="neutral" size="lg" variant="outline" icon="i-heroicons-document-text">
-          Voir mes projets
-        </UButton>
-      </div>
-    </section>
-  </UContainer>
+<template>
+  <div>
+    <!-- Hero Section -->
+    <Hero />
+
+    <!-- About Section -->
+    <About />
+
+    <!-- Projects Section -->
+    <Projects />
+
+    <!-- Contact Section -->
+    <Contact />
+  </div>
 </template>

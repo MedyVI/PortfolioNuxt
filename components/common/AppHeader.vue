@@ -1,14 +1,24 @@
 <script setup lang="ts">
-// Navigation items
+// Navigation items - utilise des ancres pour scroll smooth
 const navigation = [
-  { name: 'Accueil', to: '/' },
-  { name: 'À propos', to: '/about' },
-  { name: 'Projets', to: '/projects' },
-  { name: 'Contact', to: '/contact' },
+  { name: 'Accueil', to: '#hero' },
+  { name: 'À propos', to: '#about' },
+  { name: 'Projets', to: '#projects' },
+  { name: 'Contact', to: '#contact' },
 ]
 
 // Mobile menu state
 const isMenuOpen = ref(false)
+
+// Fonction pour le smooth scroll
+const scrollToSection = (e: Event, href: string) => {
+  e.preventDefault()
+  const element = document.querySelector(href)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+  isMenuOpen.value = false
+}
 </script>
 
 <template>
@@ -25,15 +35,15 @@ const isMenuOpen = ref(false)
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8">
-          <NuxtLink
+          <a
             v-for="item in navigation"
             :key="item.name"
-            :to="item.to"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-            active-class="text-primary dark:text-primary font-semibold"
+            :href="item.to"
+            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
+            @click="scrollToSection($event, item.to)"
           >
             {{ item.name }}
-          </NuxtLink>
+          </a>
         </div>
 
         <!-- Mobile Menu Button -->
@@ -49,16 +59,15 @@ const isMenuOpen = ref(false)
       <!-- Mobile Navigation -->
       <div v-if="isMenuOpen" class="md:hidden py-4 border-t border-gray-200 dark:border-gray-800">
         <div class="flex flex-col space-y-4">
-          <NuxtLink
+          <a
             v-for="item in navigation"
             :key="item.name"
-            :to="item.to"
-            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors"
-            active-class="text-primary dark:text-primary font-semibold"
-            @click="isMenuOpen = false"
+            :href="item.to"
+            class="text-gray-600 dark:text-gray-400 hover:text-primary dark:hover:text-primary transition-colors cursor-pointer"
+            @click="scrollToSection($event, item.to)"
           >
             {{ item.name }}
-          </NuxtLink>
+          </a>
         </div>
       </div>
     </UContainer>
