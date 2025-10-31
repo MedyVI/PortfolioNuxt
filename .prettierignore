@@ -1,0 +1,21 @@
+# Dépendances
+node_modules
+
+# Build Nuxt
+.nuxt
+.output
+dist
+
+# Cache
+.cache
+
+# Logs
+*.log
+
+# Fichiers système
+.DS_Store
+
+# Lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock

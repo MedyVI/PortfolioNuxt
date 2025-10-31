@@ -1,0 +1,14 @@
+# Robots.txt pour Portfolio MédyVI
+# Ce fichier indique aux moteurs de recherche comment explorer le site
+
+# Autoriser tous les robots à explorer tout le site
+User-agent: *
+Allow: /
+
+# Bloquer l'accès aux dossiers techniques (non nécessaires pour l'indexation)
+Disallow: /_nuxt/
+Disallow: /api/
+
+# Sitemap : plan du site pour faciliter l'indexation
+# Note : Le sitemap sera généré automatiquement plus tard avec @nuxtjs/sitemap
+Sitemap: https://votre-domaine.com/sitemap.xml
